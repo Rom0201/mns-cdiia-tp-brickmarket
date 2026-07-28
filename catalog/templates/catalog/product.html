@@ -8,8 +8,17 @@
   <body>
     <h1>Fiche produit</h1>
     <p>Bienvenue {{user_name|upper}}</p>
-    <p>
-      Bienvenue <span style="text-transform: uppercase">{{user_name}}</span>
-    </p>
+    <h2>{{product.name}}</h2>
+
+    <img
+      src="{{product.image_url}}"
+      width="250"
+      alt="Image de {{product.name}}" />
+
+    <p>{{product.description}}</p>
+
+    <ul>
+      <li>Prix : {{product.price}}</li>
+    </ul>
   </body>
 </html>
