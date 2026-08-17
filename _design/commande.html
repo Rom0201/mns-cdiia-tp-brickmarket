@@ -1,5 +1,169 @@
 <!doctype html>
 <html lang="fr">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Finaliser la commande — Brickmarket</title><link rel="stylesheet" href="styles.css"></head>
-<body data-page="checkout"><div data-site-header></div><main class="checkout-page container"><a class="back-button" href="panier.html">← Retour au panier</a><div class="checkout-head"><div><p class="eyebrow">Finaliser la commande</p><h1>Encore quelques <em>détails.</em></h1></div><div class="checkout-steps" data-checkout-steps><span class="is-active">01 <b>Livraison</b></span><i></i><span>02 <b>Paiement</b></span><i></i><span>03 <b>Confirmation</b></span></div></div><div class="checkout-layout"><div class="checkout-form" data-checkout-form></div><div class="order-summary checkout-summary" data-checkout-summary></div></div></main><div data-site-footer></div><script src="script.js"></script></body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Finalisez votre commande Brickmarket.">
+  <title>Finaliser la commande — Brickmarket</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- En-tête (à recopier à l'identique sur chaque page) -->
+  <div class="announcement"><span>✳</span> Livraison offerte dès 75 € <span class="announcement-separator">·</span> Retours sous 30 jours</div>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Brickmarket, accueil">
+      <span class="brand-mark"><i></i><i></i><i></i><i></i></span>
+      <span>brick<span>market</span></span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Accueil</a>
+      <a href="catalogue.html">La collection</a>
+      <a href="catalogue.html#lego-icons">Nouveautés <span class="nav-dot">●</span></a>
+      <a href="aide.html">Journal</a>
+    </nav>
+    <div class="header-actions">
+      <form class="search-box" action="catalogue.html" method="get" role="search">
+        <span class="icon">⌕</span>
+        <input type="search" name="search" placeholder="Rechercher" aria-label="Rechercher un set">
+      </form>
+      <a class="header-icon" href="compte.html" aria-label="Mon compte">♙</a>
+      <a class="cart-button" href="panier.html" aria-label="Panier"><span class="icon">▱</span><span>2</span></a>
+    </div>
+  </header>
+
+  <main class="checkout-page container">
+    <a class="back-button" href="panier.html">← Retour au panier</a>
+
+    <div class="checkout-head">
+      <div>
+        <p class="eyebrow">Finaliser la commande</p>
+        <h1>Encore quelques <em>détails.</em></h1>
+      </div>
+      <div class="checkout-steps">
+        <span class="is-active">01 <b>Livraison</b></span>
+        <i></i>
+        <span class="is-active">02 <b>Paiement</b></span>
+        <i></i>
+        <span>03 <b>Confirmation</b></span>
+      </div>
+    </div>
+
+    <div class="checkout-layout">
+      <form class="checkout-form" action="commande.html" method="post">
+        <div class="form-section">
+          <div class="form-section-heading">
+            <span>01</span>
+            <div>
+              <h2>Où doit-on livrer ?</h2>
+              <p>On garde vos informations bien au chaud.</p>
+            </div>
+          </div>
+          <div class="form-grid">
+            <label>Prénom<input type="text" name="prenom" placeholder="Alex"></label>
+            <label>Nom<input type="text" name="nom" placeholder="Martin"></label>
+          </div>
+          <label>Adresse<input type="text" name="adresse" placeholder="12 rue des Briques"></label>
+          <div class="form-grid">
+            <label>Code postal<input type="text" name="code-postal" placeholder="67000"></label>
+            <label>Ville<input type="text" name="ville" placeholder="Strasbourg"></label>
+          </div>
+          <label>Pays
+            <select name="pays">
+              <option>France</option>
+              <option>Belgique</option>
+              <option>Suisse</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="form-section">
+          <div class="form-section-heading">
+            <span>02</span>
+            <div>
+              <h2>Comment souhaitez-vous payer ?</h2>
+              <p>Vos données restent entre de bonnes mains.</p>
+            </div>
+          </div>
+          <label>Numéro de carte<input type="text" name="carte" placeholder="4242 4242 4242 4242"></label>
+          <div class="form-grid">
+            <label>Date d'expiration<input type="text" name="expiration" placeholder="MM / AA"></label>
+            <label>Cryptogramme<input type="text" name="cryptogramme" placeholder="123"></label>
+          </div>
+          <div class="payment-note">
+            <span>▣</span>
+            <p>Paiement chiffré et sécurisé par Brickpay.<br><b>Vous ne serez débité qu'une seule fois.</b></p>
+          </div>
+        </div>
+
+        <div class="checkout-actions">
+          <a class="text-button" href="panier.html">← Retour</a>
+          <button class="button button-dark" type="submit">Confirmer la commande <span>→</span></button>
+        </div>
+      </form>
+
+      <div class="order-summary checkout-summary">
+        <p class="eyebrow">Votre commande</p>
+        <div class="mini-line">
+          <div class="mini-line-art"><img class="mini-product-image" src="https://www.lego.com/cdn/cs/set/assets/bltb2f845ffd52a25b0/10329.png?dpr=1&amp;fit=bounds&amp;format=jpg&amp;height=1500&amp;quality=80&amp;width=1500" alt="Set LEGO Les plantes miniatures 10329"></div>
+          <span>Les plantes miniatures<br><small>× 1</small></span>
+          <strong>49,99 €</strong>
+        </div>
+        <div class="mini-line">
+          <div class="mini-line-art"><img class="mini-product-image" src="https://www.lego.com/cdn/cs/set/assets/blt08f4d88d801a4cf8/10328.png?dpr=1&amp;fit=bounds&amp;format=jpg&amp;height=1500&amp;quality=80&amp;width=1500" alt="Set LEGO Le bouquet de roses 10328"></div>
+          <span>Le bouquet de roses<br><small>× 1</small></span>
+          <strong>59,99 €</strong>
+        </div>
+        <div class="summary-total"><span>Total</span><strong>109,98 €</strong></div>
+        <p class="summary-reassurance">✳ Livraison offerte<br>✳ Retours sous 30 jours</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- État alternatif : étape 03, confirmation (à afficher à la place de .checkout-form)
+  <div class="form-section">
+    <div class="form-section-heading">
+      <span>03</span>
+      <div>
+        <h2>Tout est prêt.</h2>
+        <p>Vérifiez une dernière fois avant de lancer la construction.</p>
+      </div>
+    </div>
+    <div class="confirmation-card">
+      <span>✦</span>
+      <h3>Merci Alex !</h3>
+      <p>Votre commande #BM-2048 est confirmée. Elle prendra la route dès demain.</p>
+    </div>
+  </div>
+  -->
+
+  <!-- Pied de page (à recopier à l'identique sur chaque page) -->
+  <footer class="site-footer">
+    <div class="footer-top container">
+      <a class="brand footer-brand" href="index.html">
+        <span class="brand-mark"><i></i><i></i><i></i><i></i></span>
+        <span>brick<span>market</span></span>
+      </a>
+      <p>Des briques avec<br><em>un peu plus d'histoire.</em></p>
+      <div class="footer-links">
+        <div>
+          <b>Explorer</b>
+          <a href="catalogue.html">La collection</a>
+          <a href="catalogue.html#lego-icons">Nouveautés</a>
+          <a href="aide.html">Notre histoire</a>
+        </div>
+        <div>
+          <b>Besoin d'aide ?</b>
+          <a href="aide.html">Livraison &amp; retours</a>
+          <a href="mailto:bonjour@brickmarket.fr">Contact</a>
+          <a href="aide.html">FAQ</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <span>© 2025 Brickmarket</span>
+      <span>Fait avec soin en France <span class="footer-heart">♥</span></span>
+      <span>Instagram &nbsp; Pinterest</span>
+    </div>
+  </footer>
+</body>
 </html>

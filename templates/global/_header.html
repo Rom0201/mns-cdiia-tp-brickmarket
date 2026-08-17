@@ -1,0 +1,28 @@
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Brickmarket, accueil"
+    ><span class="brand-mark"><i></i><i></i><i></i><i></i></span
+    ><span>brick<span>market</span></span></a
+  ><button class="mobile-menu-button" data-menu aria-label="Ouvrir le menu">
+    ☰
+  </button>
+  <nav class="main-nav">
+    <a class="is-active" href="{% url 'home_route'  %}">Accueil</a
+    ><a class="" href="catalogue.html">La collection</a
+    ><a href="catalogue.html?filter=new"
+      >Nouveautés <span class="nav-dot">●</span></a
+    ><a href="aide.html">Journal</a>
+  </nav>
+  <div class="header-actions">
+    <label class="search-box"
+      ><span class="icon">⌕</span
+      ><input
+        data-search
+        type="search"
+        placeholder="Rechercher"
+        aria-label="Rechercher un set" /></label
+    ><a class="header-icon" href="compte.html" aria-label="Mon compte">♙</a
+    ><a class="cart-button" href="panier.html" aria-label="Panier"
+      ><span class="icon">▱</span><span data-cart-badge>0</span></a
+    >
+  </div>
+</header>

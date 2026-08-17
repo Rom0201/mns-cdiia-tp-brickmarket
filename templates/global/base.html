@@ -1,0 +1,26 @@
+{% load static %}
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Brickmarket, la marketplace de briques pour les collectionneurs adultes." />
+    <title>
+      {% block title %}Brickmarket — Construisez votre monde{% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <body data-page="home">
+    <div class="announcement">
+      <span>✳</span> Livraison offerte dès 75 €
+      <span class="announcement-separator">·</span> Retours sous 30 jours
+    </div>
+    {% include "global/_header.html" %}
+
+    <main>{% block content %} {% endblock %}</main>
+    
+    {% include "global/_footer.html" %}
+  </body>
+</html>

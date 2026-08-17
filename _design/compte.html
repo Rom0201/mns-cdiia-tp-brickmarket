@@ -1,5 +1,163 @@
 <!doctype html>
 <html lang="fr">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Mon compte — Brickmarket</title><link rel="stylesheet" href="styles.css"></head>
-<body data-page="account"><div data-site-header></div><main class="account-page container"><div class="account-welcome"><div><p class="eyebrow">Votre espace</p><h1>Bonjour <em>Alex.</em></h1><p>Bienvenue dans votre coin de l'atelier.</p></div><div class="account-avatar">A</div></div><div class="account-layout"><nav class="account-nav" data-account-nav><button class="is-active" data-account-tab="orders"><span>▤</span> Mes commandes <b>02</b></button><button data-account-tab="addresses"><span>⌖</span> Mes adresses</button><button data-account-tab="profile"><span>♙</span> Mon profil</button><div class="account-nav-note"><span>✦</span><p>Vous avez construit<br><b>12 sets</b> cette année.</p></div></nav><div class="account-content" data-account-content></div></div></main><div data-site-footer></div><script src="script.js"></script></body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Vos commandes, vos adresses et votre profil Brickmarket.">
+  <title>Mon compte — Brickmarket</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- En-tête (à recopier à l'identique sur chaque page) -->
+  <div class="announcement"><span>✳</span> Livraison offerte dès 75 € <span class="announcement-separator">·</span> Retours sous 30 jours</div>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Brickmarket, accueil">
+      <span class="brand-mark"><i></i><i></i><i></i><i></i></span>
+      <span>brick<span>market</span></span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Accueil</a>
+      <a href="catalogue.html">La collection</a>
+      <a href="catalogue.html#lego-icons">Nouveautés <span class="nav-dot">●</span></a>
+      <a href="aide.html">Journal</a>
+    </nav>
+    <div class="header-actions">
+      <form class="search-box" action="catalogue.html" method="get" role="search">
+        <span class="icon">⌕</span>
+        <input type="search" name="search" placeholder="Rechercher" aria-label="Rechercher un set">
+      </form>
+      <a class="header-icon" href="compte.html" aria-label="Mon compte">♙</a>
+      <a class="cart-button" href="panier.html" aria-label="Panier"><span class="icon">▱</span><span>2</span></a>
+    </div>
+  </header>
+
+  <main class="account-page container">
+    <div class="account-welcome">
+      <div>
+        <p class="eyebrow">Votre espace</p>
+        <h1>Bonjour <em>Alex.</em></h1>
+        <p>Bienvenue dans votre coin de l'atelier.</p>
+      </div>
+      <div class="account-avatar">A</div>
+    </div>
+
+    <div class="account-layout">
+      <nav class="account-nav">
+        <a class="is-active" href="#mes-commandes"><span>▤</span> Mes commandes <b>02</b></a>
+        <a href="#mes-adresses"><span>⌖</span> Mes adresses</a>
+        <a href="#mon-profil"><span>♙</span> Mon profil</a>
+        <div class="account-nav-note">
+          <span>✦</span>
+          <p>Vous avez construit<br><b>12 sets</b> cette année.</p>
+        </div>
+      </nav>
+
+      <div class="account-content">
+        <section class="account-section" id="mes-commandes">
+          <div class="content-heading">
+            <div>
+              <p class="eyebrow">Historique</p>
+              <h2>Vos commandes</h2>
+            </div>
+            <span class="muted">2 commandes</span>
+          </div>
+          <div class="order-card">
+            <div class="order-card-head">
+              <span><b>#BM-2048</b><br><small>12 avril 2025</small></span>
+              <span class="status status-green">En route</span>
+              <strong>224,80 €</strong>
+            </div>
+            <div class="order-card-products">
+              <img class="order-product-image" src="https://www.lego.com/cdn/cs/set/assets/bltb2f845ffd52a25b0/10329.png?dpr=1&amp;fit=bounds&amp;format=jpg&amp;height=1500&amp;quality=80&amp;width=1500" alt="Set LEGO Les plantes miniatures 10329">
+              <img class="order-product-image" src="https://www.lego.com/cdn/cs/set/assets/blt08f4d88d801a4cf8/10328.png?dpr=1&amp;fit=bounds&amp;format=jpg&amp;height=1500&amp;quality=80&amp;width=1500" alt="Set LEGO Le bouquet de roses 10328">
+              <div><b>Les plantes miniatures</b> + Le bouquet de roses<br><span>Livraison estimée le 15 avril</span></div>
+              <a class="text-button" href="compte.html">Suivre <span>↗</span></a>
+            </div>
+          </div>
+          <div class="order-card">
+            <div class="order-card-head">
+              <span><b>#BM-1891</b><br><small>03 février 2025</small></span>
+              <span class="status">Livrée</span>
+              <strong>299,99 €</strong>
+            </div>
+            <div class="order-card-products">
+              <img class="order-product-image" src="https://www.lego.com/cdn/cs/set/assets/blt08ba1f2bb5e8f2fb/10326.png?dpr=1&amp;fit=bounds&amp;format=jpg&amp;height=1500&amp;quality=80&amp;width=1500" alt="Set LEGO Icons Le Muséum d'Histoire naturelle 10326">
+              <div><b>Le Muséum d'Histoire naturelle</b><br><span>Livrée le 07 février</span></div>
+              <a class="text-button" href="produit.html">Recommander <span>+</span></a>
+            </div>
+          </div>
+        </section>
+
+        <section class="account-section" id="mes-adresses">
+          <div class="content-heading">
+            <div>
+              <p class="eyebrow">Livraison</p>
+              <h2>Vos adresses</h2>
+            </div>
+            <button class="button button-dark button-small" type="button">+ Ajouter</button>
+          </div>
+          <div class="address-grid">
+            <div class="address-card address-card-main">
+              <span class="status status-yellow">Principale</span>
+              <h3>Maison</h3>
+              <p>Alex Martin<br>12 rue des Briques<br>67000 Strasbourg<br>France</p>
+              <button class="text-button" type="button">Modifier <span>↗</span></button>
+            </div>
+            <div class="address-card">
+              <h3>Atelier</h3>
+              <p>Alex Martin<br>4 avenue du Studio<br>75011 Paris<br>France</p>
+              <button class="text-button" type="button">Modifier <span>↗</span></button>
+            </div>
+          </div>
+        </section>
+
+        <section class="account-section" id="mon-profil">
+          <div class="content-heading">
+            <div>
+              <p class="eyebrow">Vos informations</p>
+              <h2>Mon profil</h2>
+            </div>
+            <button class="button button-dark button-small" type="submit" form="profil">Enregistrer</button>
+          </div>
+          <form class="profile-form" id="profil" action="compte.html" method="post">
+            <label>Prénom<input type="text" name="prenom" value="Alex"></label>
+            <label>Nom<input type="text" name="nom" value="Martin"></label>
+            <label>Email<input type="email" name="email" value="alex.martin@email.com"></label>
+            <label>Téléphone<input type="tel" name="telephone" value="06 12 34 56 78"></label>
+          </form>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Pied de page (à recopier à l'identique sur chaque page) -->
+  <footer class="site-footer">
+    <div class="footer-top container">
+      <a class="brand footer-brand" href="index.html">
+        <span class="brand-mark"><i></i><i></i><i></i><i></i></span>
+        <span>brick<span>market</span></span>
+      </a>
+      <p>Des briques avec<br><em>un peu plus d'histoire.</em></p>
+      <div class="footer-links">
+        <div>
+          <b>Explorer</b>
+          <a href="catalogue.html">La collection</a>
+          <a href="catalogue.html#lego-icons">Nouveautés</a>
+          <a href="aide.html">Notre histoire</a>
+        </div>
+        <div>
+          <b>Besoin d'aide ?</b>
+          <a href="aide.html">Livraison &amp; retours</a>
+          <a href="mailto:bonjour@brickmarket.fr">Contact</a>
+          <a href="aide.html">FAQ</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <span>© 2025 Brickmarket</span>
+      <span>Fait avec soin en France <span class="footer-heart">♥</span></span>
+      <span>Instagram &nbsp; Pinterest</span>
+    </div>
+  </footer>
+</body>
 </html>

@@ -1,5 +1,129 @@
 <!doctype html>
 <html lang="fr">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Votre panier — Brickmarket</title><link rel="stylesheet" href="styles.css"></head>
-<body data-page="cart"><div data-site-header></div><main class="cart-page container"><div class="page-intro page-intro-small"><div><p class="eyebrow">Votre sélection</p><h1>Le panier, <em>c'est par ici.</em></h1></div><p><span data-cart-count>0</span> pièces attendent de prendre vie.</p></div><div data-cart-content></div></main><div data-site-footer></div><script src="script.js"></script></body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Votre panier Brickmarket.">
+  <title>Votre panier — Brickmarket</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- En-tête (à recopier à l'identique sur chaque page) -->
+  <div class="announcement"><span>✳</span> Livraison offerte dès 75 € <span class="announcement-separator">·</span> Retours sous 30 jours</div>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Brickmarket, accueil">
+      <span class="brand-mark"><i></i><i></i><i></i><i></i></span>
+      <span>brick<span>market</span></span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Accueil</a>
+      <a href="catalogue.html">La collection</a>
+      <a href="catalogue.html#lego-icons">Nouveautés <span class="nav-dot">●</span></a>
+      <a href="aide.html">Journal</a>
+    </nav>
+    <div class="header-actions">
+      <form class="search-box" action="catalogue.html" method="get" role="search">
+        <span class="icon">⌕</span>
+        <input type="search" name="search" placeholder="Rechercher" aria-label="Rechercher un set">
+      </form>
+      <a class="header-icon" href="compte.html" aria-label="Mon compte">♙</a>
+      <a class="cart-button" href="panier.html" aria-label="Panier"><span class="icon">▱</span><span>2</span></a>
+    </div>
+  </header>
+
+  <main class="cart-page container">
+    <div class="page-intro page-intro-small">
+      <div>
+        <p class="eyebrow">Votre sélection</p>
+        <h1>Le panier, <em>c'est par ici.</em></h1>
+      </div>
+      <p><span>2</span> pièces attendent de prendre vie.</p>
+    </div>
+
+    <div class="cart-layout">
+      <div class="cart-lines">
+        <div class="cart-line">
+          <div class="cart-line-art"><img class="cart-product-image" src="https://www.lego.com/cdn/cs/set/assets/bltb2f845ffd52a25b0/10329.png?dpr=1&amp;fit=bounds&amp;format=jpg&amp;height=1500&amp;quality=80&amp;width=1500" alt="Set LEGO Les plantes miniatures 10329"></div>
+          <div class="cart-line-copy">
+            <p class="eyebrow">Botanicals</p>
+            <h3>Les plantes miniatures</h3>
+            <span>758 pièces</span>
+          </div>
+          <div class="quantity-control">
+            <button type="button" aria-label="Retirer une pièce">−</button>
+            <span>1</span>
+            <button type="button" aria-label="Ajouter une pièce">+</button>
+          </div>
+          <strong class="line-price">49,99 €</strong>
+        </div>
+        <div class="cart-line">
+          <div class="cart-line-art"><img class="cart-product-image" src="https://www.lego.com/cdn/cs/set/assets/blt08f4d88d801a4cf8/10328.png?dpr=1&amp;fit=bounds&amp;format=jpg&amp;height=1500&amp;quality=80&amp;width=1500" alt="Set LEGO Le bouquet de roses 10328"></div>
+          <div class="cart-line-copy">
+            <p class="eyebrow">Botanicals</p>
+            <h3>Le bouquet de roses</h3>
+            <span>822 pièces</span>
+          </div>
+          <div class="quantity-control">
+            <button type="button" aria-label="Retirer une pièce">−</button>
+            <span>1</span>
+            <button type="button" aria-label="Ajouter une pièce">+</button>
+          </div>
+          <strong class="line-price">59,99 €</strong>
+        </div>
+        <div class="cart-perks">
+          <span>✳</span>
+          <p><b>Bonne nouvelle :</b> votre commande bénéficie de la livraison offerte.</p>
+        </div>
+      </div>
+      <aside class="order-summary">
+        <p class="eyebrow">Récapitulatif</p>
+        <h2>On y est presque.</h2>
+        <div class="summary-row"><span>Sous-total</span><strong>109,98 €</strong></div>
+        <div class="summary-row"><span>Livraison</span><strong class="free">Offerte</strong></div>
+        <div class="summary-total"><span>Total</span><strong>109,98 €</strong></div>
+        <a class="button button-dark button-wide" href="commande.html">Passer la commande <span>→</span></a>
+        <small>Paiement sécurisé · CB, PayPal</small>
+      </aside>
+    </div>
+  </main>
+
+  <!-- État alternatif : panier vide (à afficher à la place de .cart-layout)
+  <div class="empty-state">
+    <span>▱</span>
+    <h2>Votre panier est léger comme une plume.</h2>
+    <p>Il manque juste une belle construction.</p>
+    <a class="button button-dark" href="catalogue.html">Voir la collection <span>→</span></a>
+  </div>
+  -->
+
+  <!-- Pied de page (à recopier à l'identique sur chaque page) -->
+  <footer class="site-footer">
+    <div class="footer-top container">
+      <a class="brand footer-brand" href="index.html">
+        <span class="brand-mark"><i></i><i></i><i></i><i></i></span>
+        <span>brick<span>market</span></span>
+      </a>
+      <p>Des briques avec<br><em>un peu plus d'histoire.</em></p>
+      <div class="footer-links">
+        <div>
+          <b>Explorer</b>
+          <a href="catalogue.html">La collection</a>
+          <a href="catalogue.html#lego-icons">Nouveautés</a>
+          <a href="aide.html">Notre histoire</a>
+        </div>
+        <div>
+          <b>Besoin d'aide ?</b>
+          <a href="aide.html">Livraison &amp; retours</a>
+          <a href="mailto:bonjour@brickmarket.fr">Contact</a>
+          <a href="aide.html">FAQ</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <span>© 2025 Brickmarket</span>
+      <span>Fait avec soin en France <span class="footer-heart">♥</span></span>
+      <span>Instagram &nbsp; Pinterest</span>
+    </div>
+  </footer>
+</body>
 </html>
