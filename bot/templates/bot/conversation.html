@@ -1,0 +1,83 @@
+{% extends 'global/base.html' %} 
+
+{% load custom_filters %}
+
+{# Classes appliquées à la balise <main> de base.html #}
+{% block main_class %}chat-page container{% endblock %}
+
+{% block content %}
+
+  <main class="chat-page container">
+    <div class="page-intro page-intro-small">
+      <div>
+        <p class="eyebrow">Assistant Brickmarket</p>
+        <h1>Une question ?<br><em>Brick vous répond.</em></h1>
+      </div>
+      <p>Un set à choisir, une commande à suivre, une pièce qui manque : dites-nous tout.</p>
+    </div>
+
+    <div class="chat-layout">
+      <!-- Fenêtre de conversation -->
+      <section class="chat-panel" aria-label="Conversation avec l'assistant">
+        <header class="chat-panel-head">
+          <span class="chat-avatar chat-avatar-bot" aria-hidden="true">B</span>
+          <div>
+            <h2>Brick</h2>
+            <p class="chat-status">En ligne · répond en quelques secondes</p>
+          </div>
+          <span class="chat-panel-tag">Assistant</span>
+        </header>
+
+        <ol class="chat-thread">
+
+          {% for message in conversation %}
+          <li class="chat-message chat-message-{% if message.role == 'user' %}user{% else %}bot{% endif %}">
+            <span class="chat-avatar chat-avatar-{% if message.role == 'user' %}user{% else %}bot{% endif %}" aria-hidden="true">B</span>
+            <div class="chat-bubble">
+              <p>{{message.content}}</p>
+              <time class="chat-time" datetime="2025-04-12T09:31">09:31</time>
+            </div>
+          </li>
+          {% endfor %}
+        </ol>
+
+        <!-- Suggestions : de simples liens, pas de JavaScript
+        <div class="chat-suggestions">
+          <p class="eyebrow">Questions fréquentes</p>
+          <a class="chat-chip" href="aide.html">Où est ma commande ?</a>
+          <a class="chat-chip" href="aide.html">Comment retourner un set ?</a>
+          <a class="chat-chip" href="catalogue.html">Quels sets pour débuter ?</a>
+        </div> -->
+
+        <!-- Champ de saisie : formulaire HTML classique, à brancher sur le
+            back-end du chatbot (attribut action). -->
+        <form class="chat-composer" action="{% url 'bot:send' %}" method="post">
+          {% csrf_token %}
+
+          <label class="chat-composer-field">
+            <span class="chat-composer-label">Votre message</span>
+            <textarea name="prompt" rows="2" placeholder="Écrivez votre question…" aria-label="Votre message"></textarea>
+          </label>
+          <button class="button button-dark chat-send" type="submit">Envoyer <span>→</span></button>
+        </form>
+        <p class="chat-note">Brick est un assistant automatique. Vos échanges peuvent être relus pour améliorer le service.</p>
+      </section>
+
+      <!-- Colonne d'information -->
+      <aside class="chat-aside">
+        <span class="chat-aside-icon">✦</span>
+        <h2>Ce que Brick sait faire</h2>
+        <ul class="chat-skills">
+          <li>Conseiller un set selon l'âge, le budget ou l'envie</li>
+          <li>Donner l'état d'une commande et son suivi</li>
+          <li>Expliquer la livraison, les retours et les garanties</li>
+          <li>Retrouver une pièce manquante dans une boîte</li>
+        </ul>
+        <div class="chat-human">
+          <p><b>Besoin d'un humain ?</b><br>L'équipe répond du lundi au vendredi, de 9h à 18h.</p>
+          <a class="button button-dark button-wide" href="mailto:bonjour@brickmarket.fr">Écrire à l'équipe <span>→</span></a>
+        </div>
+      </aside>
+    </div>
+  </main>
+{% endblock %}

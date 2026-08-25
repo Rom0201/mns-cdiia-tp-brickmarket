@@ -1,0 +1,50 @@
+{% extends 'global/base.html' %} 
+
+{# Classes appliquées à la balise <main> de base.html #}
+{% block main_class %}catalogue-page container{% endblock %}
+
+{% block content %}
+    <div class="page-intro">
+      <div>
+        <p class="eyebrow">La collection Brickmarket</p>
+        <h1>Trouvez votre<br><em>prochaine construction.</em></h1>
+      </div>
+      <p>Des sets sélectionnés pour nourrir votre imagination — et votre étagère.</p>
+    </div>
+
+    <div class="catalogue-toolbar">
+      <div class="category-tabs">
+        <a {% if not current_category %}class="is-active" {% endif %} href="{% url 'product_catalogue' %}">Tout voir</a>
+        {% for category in categories %}
+        <a {% if category == current_category %}class="is-active" {% endif %} href="{% url 'product_catalogue' %}?category={{category.slug}}">{{category.name}}</a>
+          {% endfor %}
+      </div>
+      <span class="result-count"><span>6</span> résultats <span>↘</span></span>
+    </div>
+
+    <section class="catalogue-section" id="botanicals">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">04 sets</p>
+          <h2>{% if current_category %} {{current_category.name}} {% else %} Tous les produits {% endif %}</h2>
+        </div>
+      </div>
+      <div class="product-grid">
+        {% for product in products %}
+        <article class="product-card">
+          <a class="product-visual" href="{% url 'product_details' slug=product.slug %}" aria-label="Voir {{product.name}}">
+            <span class="product-tag">Coup de cœur</span>
+            <img class="product-image" src="{{product.image_url}}" alt="Illustration du Set {{product.name}} {{product.id}}" loading="lazy">
+            <span class="product-quick">Voir le set <span>↗</span></span>
+          </a>
+          <div class="product-info">
+            <p class="eyebrow">{{product.category}} · {{product.id}} · {{product.get_status_display}}</p>
+            <a class="product-name" href="{% url 'product_details' slug=product.slug %}">{{product.name}}</a>
+            <div class="product-meta"><span>{{product.parts_count}}</span><strong>{{product.price_display}} €</strong></div>
+            <button class="add-button" type="button"><span>+</span> Ajouter</button>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+{% endblock %}
