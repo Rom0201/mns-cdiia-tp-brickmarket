@@ -3,7 +3,7 @@ FROM python:3.14.7-slim-trixie
 ENV PYTHONDONTWRITEBITECODE=1 \
     PYTHONUNBUFFERED=1
 
-RUN usercardd --create-home django \
+RUN useradd --create-home django \
     && mkdir /app \
     && chown django /app
 
