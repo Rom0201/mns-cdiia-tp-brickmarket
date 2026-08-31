@@ -1,10 +1,22 @@
 FROM python:3.14.7-slim-trixie
 
+ENV PYTHONDONTWRITEBITECODE=1 \
+    PYTHONUNBUFFERED=1
+
+RUN usercardd --create-home django \
+    && mkdir /app \
+    && chown django /app
+
 WORKDIR /app
 
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+COPY --chown=django:django. . .
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+USER django
+
+EXPOSE 8000
+
+ENTRYPOINT ["sh", "docker-entrypoint.sh"]
+CMD ["gunicorn", "brickmarket.wsgi:application", "--bind", "0.0.0.0:0000", "--workers", "3", "--access-logfile", "-", "--error-logfile", "-"]
